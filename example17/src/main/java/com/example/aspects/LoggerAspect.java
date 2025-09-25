@@ -31,16 +31,16 @@ public class LoggerAspect {
         logger.info(joinPoint.getSignature().toString() + " method execution end");
     }
 
-//    @Around("@annotation(com.example.interfaces.LogAspect)")
-//    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
-//        logger.info(joinPoint.toString() + " method execution start");
-//        Instant start = Instant.now();
-//        joinPoint.proceed();
-//        Instant finish = Instant.now();
-//        long timeElapsed = Duration.between(start, finish).toMillis();
-//        logger.info("Time took to execute the method : "+timeElapsed);
-//        logger.info(joinPoint.getSignature().toString() + " method execution end");
-//    }
+    @Around("@annotation(com.example.interfaces.LogAspect)")
+    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.toString() + " method execution start");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info("Time took to execute the method : "+timeElapsed);
+        logger.info(joinPoint.getSignature().toString() + " method execution end");
+    }
 
     @AfterThrowing(value = "execution(* com.example.services.*.*(..))",throwing = "ex")
     public void logException(JoinPoint joinPoint, Exception ex) {
