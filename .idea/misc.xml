@@ -19,7 +19,27 @@
         <option value="$PROJECT_DIR$/example14/pom.xml" />
         <option value="$PROJECT_DIR$/example16/pom.xml" />
         <option value="$PROJECT_DIR$/example17/pom.xml" />
+        <option value="$PROJECT_DIR$/example_18/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/example01/pom.xml" />
+        <option value="$PROJECT_DIR$/example02/pom.xml" />
+        <option value="$PROJECT_DIR$/example03/pom.xml" />
+        <option value="$PROJECT_DIR$/example04/pom.xml" />
+        <option value="$PROJECT_DIR$/example05/pom.xml" />
+        <option value="$PROJECT_DIR$/example06/pom.xml" />
+        <option value="$PROJECT_DIR$/example07/pom.xml" />
+        <option value="$PROJECT_DIR$/example08/pom.xml" />
+        <option value="$PROJECT_DIR$/example09/pom.xml" />
+        <option value="$PROJECT_DIR$/example10/pom.xml" />
+        <option value="$PROJECT_DIR$/example11/pom.xml" />
+        <option value="$PROJECT_DIR$/example12/pom.xml" />
+        <option value="$PROJECT_DIR$/example14/pom.xml" />
+        <option value="$PROJECT_DIR$/example16/pom.xml" />
+        <option value="$PROJECT_DIR$/example17/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
