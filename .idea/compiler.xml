@@ -6,20 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="example04" />
-        <module name="example05" />
-        <module name="example02" />
-        <module name="example03" />
-        <module name="example11" />
-        <module name="example01" />
-        <module name="example12" />
-        <module name="example10" />
-        <module name="example08" />
-        <module name="example09" />
-        <module name="example06" />
-        <module name="example17" />
-        <module name="example07" />
+        <module name="example_18" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="example01" target="17" />
+      <module name="example02" target="17" />
+      <module name="example03" target="17" />
+      <module name="example04" target="17" />
+      <module name="example05" target="17" />
+      <module name="example06" target="17" />
+      <module name="example07" target="17" />
+      <module name="example08" target="17" />
+      <module name="example09" target="17" />
+      <module name="example10" target="17" />
+      <module name="example11" target="17" />
+      <module name="example12" target="17" />
+      <module name="example14" target="17" />
+      <module name="example16" target="17" />
+      <module name="example17" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="example_18" options="-parameters" />
+    </option>
   </component>
 </project>
