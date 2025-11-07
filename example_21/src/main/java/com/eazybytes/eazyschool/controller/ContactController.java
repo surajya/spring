@@ -1,14 +1,13 @@
 package com.eazybytes.eazyschool.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class ContactController {
 
-    @RequestMapping(value={"", "/","/home"})
-    public String displayHome() {
-        return "home.html";
+    @RequestMapping(value={"/contact"})
+    public String displayContact() {
+        return "contact.html";
     }
 }
