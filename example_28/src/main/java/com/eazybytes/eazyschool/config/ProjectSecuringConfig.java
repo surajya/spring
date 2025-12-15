@@ -15,20 +15,17 @@ public class ProjectSecuringConfig {
     //permit all all requests
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        System.out.println("Authentication successfully. Comming at defaultSecurityFilterChain for authorisation");
-        http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll());
+        http.authorizeHttpRequests((requestMatcherRegistry) -> requestMatcherRegistry
+                .requestMatchers("/","/home").permitAll()
+                .requestMatchers("/courses").permitAll()
+                .requestMatchers("/about").permitAll()
+                .requestMatchers("/contact").permitAll()
+                .requestMatchers("/holidays/**").permitAll()
+                .requestMatchers("/assets/**").permitAll()
+                .requestMatchers("/saveMsg").permitAll());
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
         return http.build();
     }
 
-    //Deny all all requests
-    /*@Bean
-    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        System.out.println("Authentication successfully. Comming at defaultSecurityFilterChain for authorisation");
-        http.authorizeHttpRequests((requests) -> requests.anyRequest().denyAll());
-        http.formLogin(withDefaults());
-        http.httpBasic(withDefaults());
-        return http.build();
-    }*/
 }
