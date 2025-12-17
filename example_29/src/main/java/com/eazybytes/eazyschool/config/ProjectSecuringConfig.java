@@ -23,13 +23,26 @@ public class ProjectSecuringConfig {
         http.csrf(CsrfConfigurer::disable)
                 .authorizeHttpRequests((requestMatcherRegistry) -> requestMatcherRegistry
                 .requestMatchers("/","/home").authenticated()
+                .requestMatchers("/dashboard").authenticated()
                 .requestMatchers("/courses").permitAll()
                 .requestMatchers("/about").permitAll()
                 .requestMatchers("/contact").permitAll()
                 .requestMatchers("/holidays/**").permitAll()
                 .requestMatchers("/assets/**").permitAll()
-                .requestMatchers("/saveMsg").permitAll());
-        http.formLogin(withDefaults());
+                .requestMatchers("/login").permitAll()
+                .requestMatchers("/saveMsg").permitAll()
+        );
+        http.formLogin(form -> form
+                .loginPage("/login")
+                .defaultSuccessUrl("/dashboard")
+                .failureUrl("/login?error=true")
+                .permitAll()
+        );
+        http.logout(logout -> logout
+                .logoutSuccessUrl("/login?logout=true")
+                .invalidateHttpSession(true)
+                .permitAll()
+        );
         http.httpBasic(withDefaults());
         return http.build();
     }
