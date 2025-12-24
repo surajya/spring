@@ -3,7 +3,6 @@ package com.eazybytes.eazyschool.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -17,18 +16,18 @@ public class ProjectSecuringConfig {
     //permit all all requests
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(CsrfConfigurer::disable)
-                .authorizeHttpRequests((requestMatcherRegistry) -> requestMatcherRegistry
-                        .requestMatchers("/", "/home").authenticated()
-                        .requestMatchers("/dashboard").authenticated()
-                        .requestMatchers("/courses").permitAll()
-                        .requestMatchers("/about").permitAll()
-                        .requestMatchers("/contact").permitAll()
-                        .requestMatchers("/holidays/**").permitAll()
-                        .requestMatchers("/assets/**").permitAll()
-                        .requestMatchers("/login").permitAll()
-                        .requestMatchers("/saveMsg").permitAll()
-                );
+        http.csrf(csrf -> csrf.ignoringRequestMatchers("/saveMsg"));
+        http.authorizeHttpRequests((requestMatcherRegistry) -> requestMatcherRegistry
+                .requestMatchers("/", "/home").authenticated()
+                .requestMatchers("/dashboard").authenticated()
+                .requestMatchers("/courses").permitAll()
+                .requestMatchers("/about").permitAll()
+                .requestMatchers("/contact").permitAll()
+                .requestMatchers("/holidays/**").permitAll()
+                .requestMatchers("/assets/**").permitAll()
+                .requestMatchers("/login").permitAll()
+                .requestMatchers("/logout").permitAll()
+        );
         http.formLogin(form -> form
                 .loginPage("/login")
                 .defaultSuccessUrl("/dashboard")
