@@ -19,7 +19,7 @@ Author URL: http://w3layouts.com
 <body>
 
     <!-- header -->
-	<div th:replace="~{header :: header}">...</div>
+    <div th:replace="~{header :: header}">...</div>
     <!-- //header -->
 
     <!-- inner banner -->
@@ -45,11 +45,10 @@ Author URL: http://w3layouts.com
             </div>
             <div class="row contact-block">
                 <div class="col-md-7 contact-right">
-                    <ul >
-                        <li class="alert alert-danger" role = "alert" th:each="error : ${#fields.errors('contact.*')}"
-                            th:text="${error}"></li>
+                    <ul>
+                        <li class="alert alert-danger" role="alert" th:each="error : ${#fields.errors('contact.*')}" th:text="${error}" />
                     </ul>
-                    <form action="saveMsg" method="post" class="signin-form" th:object="${contact}">
+                    <form action="/saveMsg" method="post" class="signin-form" th:object="${contact}">
                         <div class="input-grids">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -67,7 +66,7 @@ Author URL: http://w3layouts.com
                                 class="contact-input" />
                         </div>
                         <div class="form-input">
-                            <textarea th:field="*{message}"  placeholder="Type your message here"></textarea>
+                            <textarea th:field="*{message}" placeholder="Type your message here"></textarea>
                         </div>
                         <div class="text-start">
                             <button class="btn btn-style btn-style-3">Send Message</button>
@@ -128,7 +127,7 @@ Author URL: http://w3layouts.com
     <!-- //contact block -->
 
     <!-- footer block -->
-	<div th:replace="~{footer :: footer}">...</div>
+    <div th:replace="~{footer :: footer}">...</div>
     <!-- //footer block -->
 
     <!-- Js scripts -->

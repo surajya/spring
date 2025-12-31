@@ -18,7 +18,7 @@ Author URL: http://w3layouts.com
 
 <body>
     <!-- header -->
-    <th:block th:replace="header :: header"></th:block>
+    <div th:replace="~{header :: header}">...</div>
     <!-- //header -->
 
     <!-- banner section -->
@@ -352,7 +352,7 @@ Author URL: http://w3layouts.com
     <!-- //call block -->
 
     <!-- footer block -->
-    <th:block th:replace="footer :: footer"></th:block>
+    <div th:replace="~{footer :: footer}">...</div>
     <!-- //footer block -->
 
     <!-- Js scripts -->
