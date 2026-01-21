@@ -8,8 +8,6 @@ public class EazyschoolApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EazyschoolApplication.class, args);
-		String str = "Hello, EazySchool!";
-		System.out.println(str.indexOf('E'));
 	}
 
 }
