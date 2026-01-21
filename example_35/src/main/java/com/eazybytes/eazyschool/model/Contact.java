@@ -24,7 +24,7 @@ This makes our code short and clean.
 public class Contact extends BaseEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "contact_msg_id_generator")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int contactId;
 
 	/*

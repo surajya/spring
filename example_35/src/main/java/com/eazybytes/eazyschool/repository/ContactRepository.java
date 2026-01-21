@@ -1,5 +1,7 @@
 package com.eazybytes.eazyschool.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +14,8 @@ DB related operations and
 * */
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
+
+	// Custom method to find messages with a specific status
+	List<Contact> findByStatus(String status);
 
 }
